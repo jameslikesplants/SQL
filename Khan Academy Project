@@ -1,0 +1,31 @@
+CREATE TABLE store (id integer primary key, name text, price integer, aisle integer, available integer );
+
+INSERT INTO store
+VALUES 
+(1, 'crystals', 40, 1, 5),
+(2, 'manga', 10, 2, 5),
+(3, 'video games', 60, 3, 5),
+(4, 'paintings', 100, 4, 5),
+(5, 'plants', 20, 1, 5),
+(6, 'knives', 50, 6, 5),
+(7, 'controllers', 20, 3, 5),
+(8, 'tattoos', 300, 1, 5),
+(9, 'pride flags', 10, 5, 5),
+(10, 'squishmellows', 20, 5, 5),
+(11, 'journals', 5, 8, 5),
+(12, 'board games', 20, 3, 10),
+(13, 'pots', 15, 1, 10),
+(14, 'skulls', 50, 1, 5),
+(15, 'frames', 10, 4, 15);
+
+--display the database ordered by price.
+SELECT * FROM store ORDER BY price asc;
+
+--what items in the store cost equal to or less than $100?
+SELECT * FROM store WHERE price <=100 ORDER BY price asc;
+
+--what items are in aisle 1?
+SELECT * FROM store WHERE aisle =1;
+
+--what data is relevent to item 8?
+SELECT * FROM store WHERE id=8
