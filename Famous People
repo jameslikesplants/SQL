@@ -1,0 +1,52 @@
+CREATE TABLE topstars2022(
+   Rank        INTEGER,
+   Name        TEXT,
+   Age         INTEGER,
+   Sign        TEXT);
+
+INSERT INTO topstars2022(Rank,Name,Age,Sign) VALUES (1,'Ana de Armas',34,'Taurus');
+INSERT INTO topstars2022(Rank,Name,Age,Sign) VALUES (2,'Emma Darcy',30,'Cancer');
+INSERT INTO topstars2022(Rank,Name,Age,Sign) VALUES (3,'Millie Alcock',22,'Aries');
+INSERT INTO topstars2022(Rank,Name,Age,Sign) VALUES (4,'Joseph Quinn',29,'Aquarius');
+INSERT INTO topstars2022(Rank,Name,Age,Sign) VALUES (5,'Julia Garner',29,'Aquarius');
+INSERT INTO topstars2022(Rank,Name,Age,Sign) VALUES (6,'Millie Bobby Brown',18,'Pisces');
+INSERT INTO topstars2022(Rank,Name,Age,Sign) VALUES (7,'Austin Butler',31,'Leo');
+INSERT INTO topstars2022(Rank,Name,Age,Sign) VALUES (8,'Lily James',33,'Aries');
+INSERT INTO topstars2022(Rank,Name,Age,Sign) VALUES (9,'Zoe Kravitz',34,'Sagittarius');
+INSERT INTO topstars2022(Rank,Name,Age,Sign) VALUES (10,'Jamie Campbell Bower',34,'Sagittarius');
+
+CREATE TABLE topstars2022films(
+    Rank        INTEGER,
+    Name        TEXT,
+    Feature     TEXT,
+    Year        INTEGER);
+    
+INSERT INTO topstars2022films(Rank,Name,Feature,Year) VALUES (1,'Ana de Armas','Blonde',2012);
+INSERT INTO topstars2022films(Rank,Name,Feature,Year) VALUES (2,'Emma Darcy','House of the Dragon',2012);
+INSERT INTO topstars2022films(Rank,Name,Feature,Year) VALUES (3,'Millie Alcock','House of the Dragon',2012);
+INSERT INTO topstars2022films(Rank,Name,Feature,Year) VALUES (4,'Joseph Quinn','Stranger Things',2016-2024);
+INSERT INTO topstars2022films(Rank,Name,Feature,Year) VALUES (5,'Julia Garner','Inventing Anna',2012);
+INSERT INTO topstars2022films(Rank,Name,Feature,Year) VALUES (6,'Millie Bobby Brown','Stranger Things',2016-2024);
+INSERT INTO topstars2022films(Rank,Name,Feature,Year) VALUES (7,'Austin Butler','Elvis',2012);
+INSERT INTO topstars2022films(Rank,Name,Feature,Year) VALUES (8,'Lily James','Pam & Tommy',2012);
+INSERT INTO topstars2022films(Rank,Name,Feature,Year) VALUES (9,'Zoe Kravitz','The Batman',2012);
+INSERT INTO topstars2022films(Rank,Name,Feature,Year) VALUES (10,'Jamie Campbell Bower','Stranger Things',2016-2024);
+
+
+SELECT ts.name, tf.Feature
+FROM topstars2022 ts
+JOIN topstars2022films tf
+ON ts.rank=tf.rank
+WHERE tf.feature="Stranger Things";
+
+SELECT ts.name, ts.sign, tf.feature
+FROM topstars2022 ts
+JOIN topstars2022films tf
+ON ts.rank=tf.rank
+WHERE ts.sign="Aquarius";
+
+SELECT ts.name, ts.age, ts.sign, tf.feature, tf.year
+FROM topstars2022 ts
+JOIN topstars2022films tf
+ON ts.rank=tf.rank
+WHERE ts.age=34;
