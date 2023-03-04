@@ -76,6 +76,7 @@ SELECT distinct Product, Price
 FROM BIT_DB.FebSales
 WHERE Price like '%.99';
 
+#8. List all the products sold in Los Angeles in February, and include how many of each were sold?
 SELECT Product, sum(quantity)
 FROM BIT_DB.FebSales
 WHERE location like '%Los Angeles%'
